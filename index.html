@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据预处理工作台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶栏 -->
+  <header class="topbar">
+    <span class="app-name" id="appName" title="返回首页" style="cursor:pointer">数据预处理工作台</span>
+    <span class="file-info" id="fileInfo"></span>
+    <span class="spacer"></span>
+    <div class="topbar-actions">
+      <button class="btn btn-small" type="button" id="btnBackupExport" title="把当前工作区导出为 .json 备份">导出备份</button>
+      <button class="btn btn-small" type="button" id="btnBackupImport" title="从 .json 备份恢复工作区">导入备份</button>
+      <input type="file" id="backupFile" accept=".json,application/json" class="hidden">
+      <button class="btn btn-small" type="button" id="btnClear" title="清空当前工作区">清空工作区</button>
+    </div>
+  </header>
+
+  <!-- 左侧模块导航 -->
+  <nav class="nav" id="nav"></nav>
+
+  <!-- 中间工作区 -->
+  <main class="workspace" id="workspace"></main>
+
+  <!-- 右侧处理日志 -->
+  <aside class="logpanel" id="logpanel"></aside>
+
+  <!-- 底栏操作区 -->
+  <footer class="footer" id="footer"></footer>
+
+  <!-- 解析库（本地内置，不联网） -->
+  <script src="vendor/xlsx.full.min.js"></script>
+
+  <!-- 核心计算层 -->
+  <script src="js/core/table.js"></script>
+  <script src="js/core/audit.js"></script>
+  <script src="js/core/ops-dedup.js"></script>
+  <script src="js/core/ops-missing.js"></script>
+  <script src="js/core/ops-outlier.js"></script>
+  <script src="js/core/ops-type.js"></script>
+  <script src="js/core/ops-feature.js"></script>
+  <script src="js/core/ops-encode.js"></script>
+  <script src="js/core/ops-select.js"></script>
+  <script src="js/core/ops-merge.js"></script>
+  <script src="js/core/pipeline.js"></script>
+
+  <!-- UI 工具与持久化 -->
+  <script src="js/ui/ui-utils.js"></script>
+  <script src="js/ui/dom.js"></script>
+  <script src="js/ui/store.js"></script>
+
+  <!-- 各功能模块视图 -->
+  <script src="js/ui/views/view-audit.js"></script>
+  <script src="js/ui/views/view-dedup.js"></script>
+  <script src="js/ui/views/view-missing.js"></script>
+  <script src="js/ui/views/view-outlier.js"></script>
+  <script src="js/ui/views/view-type.js"></script>
+  <script src="js/ui/views/view-feature.js"></script>
+  <script src="js/ui/views/view-encode.js"></script>
+  <script src="js/ui/views/view-select.js"></script>
+  <script src="js/ui/views/view-merge.js"></script>
+
+  <!-- 主控 -->
+  <script src="js/ui/app.js"></script>
+</body>
+</html>
